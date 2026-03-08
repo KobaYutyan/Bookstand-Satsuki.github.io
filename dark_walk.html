@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>闇の中を求めて歩く</title>
+    <style>
+        /* ページ全体の基本設定 */
+        html {
+            writing-mode: vertical-rl;
+            -webkit-writing-mode: vertical-rl;
+        }
+
+        body {
+            font-family: "Yu Mincho", "YuMincho", "Hiragino Mincho ProN", "Hiragino Mincho Pro", serif;
+            color: #333;
+            display: flex;
+            /* justify-content: center;
+            padding: 50px; */
+            padding: 5vh 5vw;
+            overflow-x: auto;
+        }
+
+        /* --- 追加：うっすらとした背景画像 --- */
+        body::before {
+            content: "";
+            position: fixed;      /* 画面全体に固定してスクロールに追従させない */
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background-image: url('images/carolina-pimenta-ELO-NmuvFCM-unsplash.jpg'); /* 画像のパス */
+            background-size: cover;    /* 画面いっぱいに広げる */
+            background-position: center; /* 画像の中央を基準に配置 */
+            opacity: 0.15;        /* 透明度（0.0〜1.0）。ここで「うっすら」具合を調整します */
+            z-index: -1;          /* テキストの後ろに配置するためのマイナス値 */
+        }
+
+        /* 縦書きにするためのコンテナ */
+        .vertical-container {
+            /* writing-mode: vertical-rl;
+            -webkit-writing-mode: vertical-rl; */
+            height: 70vh;
+        }
+
+        /* タイトルの装飾 */
+        h1 {
+            font-size: 1.8em;
+            margin-left: 40px;
+            letter-spacing: 0.2em;
+        }
+
+        /* 詩の本文（<pre>タグ）の装飾 */
+        pre {
+            font-family: inherit;
+            font-size: 1.1em;
+            line-height: 1.6; /* 変更：行間を 2.5 から 1.6 に狭めました */
+            letter-spacing: 0.1em;
+            margin: 0;
+            white-space: pre-wrap;
+        }
+
+        /* トップへ戻るリンクの装飾 */
+        .back-link {
+            writing-mode: horizontal-tb;
+            -webkit-writing-mode: horizontal-tb;
+            position: fixed;
+            bottom: 5vh;
+            right: 5vh;
+            text-decoration: none;
+            color: #666;
+            font-family: sans-serif;
+            font-size: 0.9em;
+            transition: color 0.3s ease;
+        }
+
+        .back-link:hover {
+            color: #000;
+        }
+    </style>
+</head>
+<body>
+    <article class="vertical-container">
+        <h1>闇の中を求めて歩く</h1>
+        <pre>
+星明かりの無い夜
+街灯も無い　家明かりすら無いまっくらな道を
+僕はあるく
+
+なにも見えず
+なにも聞こえない
+
+色彩と音楽の楽園たる昼の世界は　すがたを消して
+そこには闇があるだけ
+
+闇があるだけなので
+あんなに騒いでた　僕の気持ちも考えも
+意味を失ったもよう
+
+急に地面が抜け落ちたような
+ひやりとした感覚がする
+
+そしてこれが
+世界の純粋な姿なのだなと思う
+
+僕が目を、耳を
+鼻や口、肌さえも失ったとき
+
+僕はこのまっくらな道を　あるくのだなと
+        </pre>
+    </article>
+    
+    <a href="index.html" class="back-link">Back</a>
+
+    <script>
+        window.addEventListener('DOMContentLoaded', (event) => {
+            // ページ全体の幅（scrollWidth）を取得し、その一番右端へスクロール位置を移動します
+            window.scrollTo(document.documentElement.scrollWidth, 0);
+        });
+    </script>
+    
+</body>
+</html>

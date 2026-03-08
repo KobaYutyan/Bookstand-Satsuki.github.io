@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>エヴァンスと雨</title>
+    <style>
+        /* ページ全体の基本設定 */
+        html {
+            writing-mode: vertical-rl;
+            -webkit-writing-mode: vertical-rl;
+        }
+
+        body {
+            font-family: "Yu Mincho", "YuMincho", "Hiragino Mincho ProN", "Hiragino Mincho Pro", serif;
+            color: #333;
+            display: flex;
+            /* justify-content: center;
+            padding: 50px; */
+            padding: 5vh 5vw;
+            overflow-x: auto;
+        }
+
+        /* --- 追加：うっすらとした背景画像 --- */
+        body::before {
+            content: "";
+            position: fixed;      /* 画面全体に固定してスクロールに追従させない */
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background-image: url('images/alex-dukhanov-ZxZQk7777R4-unsplash.jpg'); /* 画像のパス */
+            background-size: cover;    /* 画面いっぱいに広げる */
+            background-position: center; /* 画像の中央を基準に配置 */
+            opacity: 0.15;        /* 透明度（0.0〜1.0）。ここで「うっすら」具合を調整します */
+            z-index: -1;          /* テキストの後ろに配置するためのマイナス値 */
+        }
+
+        /* 縦書きにするためのコンテナ */
+        .vertical-container {
+            /* writing-mode: vertical-rl;
+            -webkit-writing-mode: vertical-rl; */
+            height: 70vh;
+        }
+
+        /* タイトルの装飾 */
+        h1 {
+            font-size: 1.8em;
+            margin-left: 40px;
+            letter-spacing: 0.2em;
+        }
+
+        /* 詩の本文（<pre>タグ）の装飾 */
+        pre {
+            font-family: inherit;
+            font-size: 1.1em;
+            line-height: 1.6; /* 変更：行間を 2.5 から 1.6 に狭めました */
+            letter-spacing: 0.1em;
+            margin: 0;
+            white-space: pre-wrap;
+        }
+
+        /* トップへ戻るリンクの装飾 */
+        .back-link {
+            writing-mode: horizontal-tb;
+            -webkit-writing-mode: horizontal-tb;
+            position: fixed;
+            bottom: 5vh;
+            right: 5vw;
+            text-decoration: none;
+            color: #666;
+            font-family: sans-serif;
+            font-size: 0.9em;
+            transition: color 0.3s ease;
+        }
+
+        .back-link:hover {
+            color: #000;
+        }
+    </style>
+</head>
+<body>
+    <article class="vertical-container">
+        <h1>エヴァンスと雨</h1>
+        <pre>
+百合の花に、雨落ちて。
+
+エヴァンスの、ピアノの吐息が
+
+ふりかかる。
+
+
+
+君が住むのは、はるか西。
+
+面影は遠く、
+
+その仕草、笑い声。
+
+ふりしきる雨に
+
+それらは打ち消される………
+
+
+
+幻か、現実か？
+
+その倒錯も、雨の音に打ち消される。
+
+
+
+あの赤いホテルの部屋で、
+
+死んだはずの、君との逢瀬。
+
+確かに聴こえた、震える吐息。
+
+
+
+幻か、現実か？
+
+その倒錯も、雨の音に打ち消される。
+
+
+
+その空は、
+
+油絵の具で塗りつぶした、
+
+濃い水色の、鎮魂歌。
+
+
+
+その西側に、
+
+炭で描いた亀裂のような、
+
+黒い模様が浮かんでる。
+
+
+
+………雨はふりしきる………
+
+
+
+君が住むのは、はるか西。
+
+面影は遠く、
+
+その仕草、笑い声。
+
+
+
+百合の花に、雨落ちて。
+
+エヴァンスの、ピアノの吐息が
+
+ふりかかる。
+        </pre>
+    </article>
+    
+    <a href="index.html" class="back-link">Back</a>
+
+    <script>
+        window.addEventListener('DOMContentLoaded', (event) => {
+            // ページ全体の幅（scrollWidth）を取得し、その一番右端へスクロール位置を移動します
+            window.scrollTo(document.documentElement.scrollWidth, 0);
+        });
+    </script>
+    
+</body>
+</html>
